@@ -15,7 +15,7 @@ In the "settings.py" file, you can change the language, activate/de-activate the
 
 ### -How can I add my own Cards ?
 To do so, open the "DataBase.csv" file, and add your own list of words.
-You can modify
+You can modify it as your wish.
 
 ##### -Font used in the screenshot is from Google Fonts
 https://fonts.google.com/specimen/Open+Sans
