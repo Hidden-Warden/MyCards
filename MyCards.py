@@ -126,18 +126,18 @@ def Update(Numéro):
     # Update the window content with the new word
     on_click()
     if True:
-            canvas.create_text((s_screen_width/first_colone), (80), text=Rappel_CSV_Title[0],fill="red", font=s_font_family) ##1 
-            canvas.create_text((s_screen_width/first_colone), (160), text=Rappel_CSV_Title[1],fill=s_font_color, font=s_font_family) ##2
-            canvas.create_text((s_screen_width/first_colone), (240), text=Rappel_CSV_Title[2],fill="green", font=s_font_family) ##3
-            canvas.create_text((s_screen_width/first_colone), (320), text=Rappel_CSV_Title[3],fill=s_font_color, font=s_font_family) ##4
-            canvas.create_text((s_screen_width/first_colone), (420), text=Rappel_CSV_Title[4],fill=s_font_color, font=s_font_family) ##5
-            canvas.create_text((s_screen_width/first_colone), (560), text=Rappel_CSV_Title[5],fill=s_font_color, font=s_font_family) ##6
+            canvas.create_text((s_screen_width/first_colonne), (80), text=Rappel_CSV_Title[0],fill="red", font=s_font_family) ##1 
+            canvas.create_text((s_screen_width/first_colonne), (160), text=Rappel_CSV_Title[1],fill=s_font_color, font=s_font_family) ##2
+            canvas.create_text((s_screen_width/first_colonne), (240), text=Rappel_CSV_Title[2],fill="green", font=s_font_family) ##3
+            canvas.create_text((s_screen_width/first_colonne), (320), text=Rappel_CSV_Title[3],fill=s_font_color, font=s_font_family) ##4
+            canvas.create_text((s_screen_width/first_colonne), (420), text=Rappel_CSV_Title[4],fill=s_font_color, font=s_font_family) ##5
+            canvas.create_text((s_screen_width/first_colonne), (560), text=Rappel_CSV_Title[5],fill=s_font_color, font=s_font_family) ##6
             if data_base_free_category==True: ##Free category 
-                canvas.create_text((s_screen_width/first_colone), (640), text=Rappel_CSV_Title[6],fill=s_font_color, font=s_font_family) ##7
+                canvas.create_text((s_screen_width/first_colonne), (640), text=Rappel_CSV_Title[6],fill=s_font_color, font=s_font_family) ##7
             ###
-            canvas.create_text((s_screen_width/scnd_colone), (80), text=BaseDeMots[Numéro][1],fill="red", font=s_font_family) ##1
-            canvas.create_text((s_screen_width/scnd_colone), (160), text=BaseDeMots[Numéro][2],fill=s_font_color, font=s_font_family) ##2
-            canvas.create_text((s_screen_width/scnd_colone), (240), text=BaseDeMots[Numéro][3],fill="green", font=s_font_family) ##3
+            canvas.create_text((s_screen_width/scnd_colonne), (80), text=BaseDeMots[Numéro][1],fill="red", font=s_font_family) ##1
+            canvas.create_text((s_screen_width/scnd_colonne), (160), text=BaseDeMots[Numéro][2],fill=s_font_color, font=s_font_family) ##2
+            canvas.create_text((s_screen_width/scnd_colonne), (240), text=BaseDeMots[Numéro][3],fill="green", font=s_font_family) ##3
             if len(BaseDeMots[Numéro][4])>=45: ##4
                 N4_1=(BaseDeMots[Numéro][4][:45]) ##4
                 N4_2=('-'+BaseDeMots[Numéro][4][45:]) ##4
@@ -145,14 +145,14 @@ def Update(Numéro):
                     N4_1=(BaseDeMots[Numéro][4][:45]) ##4
                     N4_2=('-'+BaseDeMots[Numéro][4][45:90]) ##4
                     N4_3=('-'+BaseDeMots[Numéro][4][90:]) ##4
-                    canvas.create_text((s_screen_width/scnd_colone), (320), text=N4_1,fill=s_font_color, font=s_font_family) ##4
-                    canvas.create_text((s_screen_width/scnd_colone), (350), text=N4_2,fill=s_font_color, font=s_font_family) ##4
-                    canvas.create_text((s_screen_width/scnd_colone), (380), text=N4_3,fill=s_font_color, font=s_font_family) ##4
+                    canvas.create_text((s_screen_width/scnd_colonne), (320), text=N4_1,fill=s_font_color, font=s_font_family) ##4
+                    canvas.create_text((s_screen_width/scnd_colonne), (350), text=N4_2,fill=s_font_color, font=s_font_family) ##4
+                    canvas.create_text((s_screen_width/scnd_colonne), (380), text=N4_3,fill=s_font_color, font=s_font_family) ##4
                 else: ##4
-                    canvas.create_text((s_screen_width/scnd_colone), (320), text=N4_1,fill=s_font_color, font=s_font_family) ##4
-                    canvas.create_text((s_screen_width/scnd_colone), (350), text=N4_2,fill=s_font_color, font=s_font_family) ##4
+                    canvas.create_text((s_screen_width/scnd_colonne), (320), text=N4_1,fill=s_font_color, font=s_font_family) ##4
+                    canvas.create_text((s_screen_width/scnd_colonne), (350), text=N4_2,fill=s_font_color, font=s_font_family) ##4
             else: ##4
-                canvas.create_text((s_screen_width/scnd_colone), (320), text=BaseDeMots[Numéro][4],fill=s_font_color, font=s_font_family) ##4
+                canvas.create_text((s_screen_width/scnd_colonne), (320), text=BaseDeMots[Numéro][4],fill=s_font_color, font=s_font_family) ##4
             #################################################################################################################################
             if len(BaseDeMots[Numéro][5])>=45: ##5
                 N5_1=(BaseDeMots[Numéro][5][:45]) ##5
@@ -161,31 +161,31 @@ def Update(Numéro):
                     N5_1=(BaseDeMots[Numéro][5][:45]) ##5
                     N5_2=('-'+BaseDeMots[Numéro][5][45:90]) ##5
                     N5_3=('-'+BaseDeMots[Numéro][5][90:]) ##5
-                    canvas.create_text((s_screen_width/scnd_colone), (420), text=N5_1,fill=s_font_color, font=s_font_family) ##5
-                    canvas.create_text((s_screen_width/scnd_colone), (450), text=N5_2,fill=s_font_color, font=s_font_family) ##5
-                    canvas.create_text((s_screen_width/scnd_colone), (480), text=N5_3,fill=s_font_color, font=s_font_family) ##5
+                    canvas.create_text((s_screen_width/scnd_colonne), (420), text=N5_1,fill=s_font_color, font=s_font_family) ##5
+                    canvas.create_text((s_screen_width/scnd_colonne), (450), text=N5_2,fill=s_font_color, font=s_font_family) ##5
+                    canvas.create_text((s_screen_width/scnd_colonne), (480), text=N5_3,fill=s_font_color, font=s_font_family) ##5
                 else: ##5
-                    canvas.create_text((s_screen_width/scnd_colone), (420), text=N5_1,fill=s_font_color, font=s_font_family) ##5
-                    canvas.create_text((s_screen_width/scnd_colone), (450), text=N5_2,fill=s_font_color, font=s_font_family) ##5
+                    canvas.create_text((s_screen_width/scnd_colonne), (420), text=N5_1,fill=s_font_color, font=s_font_family) ##5
+                    canvas.create_text((s_screen_width/scnd_colonne), (450), text=N5_2,fill=s_font_color, font=s_font_family) ##5
             else: ##5
-                canvas.create_text((s_screen_width/scnd_colone), (420), text=BaseDeMots[Numéro][5],fill=s_font_color, font=s_font_family) ##5
+                canvas.create_text((s_screen_width/scnd_colonne), (420), text=BaseDeMots[Numéro][5],fill=s_font_color, font=s_font_family) ##5
             #################################################################################################################################
             if len(BaseDeMots[Numéro][6])>=45: ##6
                 N6_1=(BaseDeMots[Numéro][6][:45]) ##6
                 N6_2=('-'+BaseDeMots[Numéro][6][45:]) ##6
-                canvas.create_text((s_screen_width/scnd_colone), (560), text=N6_1,fill=s_font_color, font=s_font_family) ##6
-                canvas.create_text((s_screen_width/scnd_colone), (590), text=N6_2,fill=s_font_color, font=s_font_family) ##6
+                canvas.create_text((s_screen_width/scnd_colonne), (560), text=N6_1,fill=s_font_color, font=s_font_family) ##6
+                canvas.create_text((s_screen_width/scnd_colonne), (590), text=N6_2,fill=s_font_color, font=s_font_family) ##6
             else: ##5
-                canvas.create_text((s_screen_width/scnd_colone), (560), text=BaseDeMots[Numéro][6],fill=s_font_color, font=s_font_family) ##6
+                canvas.create_text((s_screen_width/scnd_colonne), (560), text=BaseDeMots[Numéro][6],fill=s_font_color, font=s_font_family) ##6
             #################################################################################################################################
             if data_base_free_category==True: ##Free category ##7
                 if len(BaseDeMots[Numéro][7])>=45: ##7
                     N7_1=(BaseDeMots[Numéro][7][:45]) ##7
                     N7_2=('-'+BaseDeMots[Numéro][7][45:]) ##7
-                    canvas.create_text((s_screen_width/scnd_colone), (640), text=N7_1,fill=s_font_color, font=s_font_family) ##7
-                    canvas.create_text((s_screen_width/scnd_colone), (670), text=N7_2,fill=s_font_color, font=s_font_family) ##7
+                    canvas.create_text((s_screen_width/scnd_colonne), (640), text=N7_1,fill=s_font_color, font=s_font_family) ##7
+                    canvas.create_text((s_screen_width/scnd_colonne), (670), text=N7_2,fill=s_font_color, font=s_font_family) ##7
                 else: ##5
-                    canvas.create_text((s_screen_width/scnd_colone), (640), text=BaseDeMots[Numéro][7],fill=s_font_color, font=s_font_family) ##7
+                    canvas.create_text((s_screen_width/scnd_colonne), (640), text=BaseDeMots[Numéro][7],fill=s_font_color, font=s_font_family) ##7
             #################################################################################################################################
 ####End of the function Update####
 

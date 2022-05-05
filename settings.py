@@ -5,8 +5,8 @@ full_screen=False #True(Full screen), False(Windowed)
 reseizeable_windows=True #True(Resizeable windows), False(Fixed windows)
 s_delimiter=";" #Delimiter used in the CSV file (";" / ",")
 
-first_colone=5 #The higher the value, the more to the left
-scnd_colone=2.2 #The higher the value, the more to the left
+first_colonne=5 #The higher the value, the more to the left
+scnd_colonne=2.2 #The higher the value, the more to the left
 
 #Window & font settings 
 s_screen_width=1920
