@@ -27,18 +27,20 @@ You can modify it as your wish.
 
 #### -Without moving the columns
 ![maximum of character(1)](https://user-images.githubusercontent.com/70717127/166919710-5814b19c-4213-4942-8ae9-45e35cf862d2.png)
-##### -First columns moved to the left. Change "first_colone=5" to "first_colone=7"
+#### -First columns moved to the left. Change "first_colone=5" to "first_colone=7"
 ![maximum of character(2)](https://user-images.githubusercontent.com/70717127/166919714-679dc889-2473-4e02-9083-7436a784ad72.png)
 
-##### -Example taken:
+#### -Example taken:
     - This sentence is composed of 42 characters 
     
     - ##############################################This sentence is composed of 135 characters######################################12345678
 
 ### -How to update MyCards?
 Download the new released on GitHub, extract the.zip file and transfert/copy the following files to the new folder ('settings.py' & 'DataBase.csv').
+   - If one of these files comes to change, I will notify it in the changelog so you can manually put your settings back on the new version.
 
-##### -Font used in the screenshot is from Google Fonts
+
+#### -Font used in the screenshot is from Google Fonts
 https://fonts.google.com/specimen/Open+Sans
 
 If you see my project, and try it out, I would love to have your feedback ! :D
