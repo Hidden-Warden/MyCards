@@ -1,5 +1,5 @@
 #Version:
-#0.2.2
+#0.2.3
 ###
 import os ###  Librairie
 import csv ### Docs /  Librairie
@@ -219,9 +219,9 @@ def Update(Numéro):
             canvas.create_text((s_screen_width/scnd_colonne), (480), text=N5_3,fill=s_font_color, font=s_font_family) ##5
             #################################################################################################################################
             if len(BaseDeMots[Numéro][6])>=45: ##6
-                N6_1=(BaseDeMots[Numéro][5][:45])
+                N6_1=(BaseDeMots[Numéro][6][:45])
                 #
-                N6_2=(BaseDeMots[Numéro][5][45:])
+                N6_2=(BaseDeMots[Numéro][6][45:])
                 if N6_1[len(N6_1)-1]!=" " or N6_1[len(N6_1)-1]!=",":
                     if N6_2[0]!=" " or N6_2[0]!=",":
                         N6_2="-"+N6_2
