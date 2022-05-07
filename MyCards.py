@@ -1,5 +1,5 @@
 #Version:
-#0.1.2
+#0.2.2
 ###
 import os ###  Librairie
 import csv ### Docs /  Librairie
@@ -13,6 +13,8 @@ from language_modules import * ### Docs
 Language=[] #List (will contain the words)
 NumberOfWord=-1 #The number of the word in the list (DataBase.csv)
 GitHub="https://github.com/Hidden-Warden/MyCards/blob/main/README.md" #Link to GitHub ;D
+Last_Random=-1
+Last_Random_List=[]
 ###
 with open("DataBase.csv", encoding='utf-8', newline='') as csvfile:
     BaseDeMots=list(csv.reader(csvfile,delimiter=s_delimiter)) 
@@ -38,18 +40,23 @@ def on_click():
 def Randow_Word():
     #Random word from the database
     global NumberOfWord
+    global Last_Random
+    global Last_Random_List
     if True:
         old_NumberOfWord=NumberOfWord
         NumberOfWord=random.randint(0,len(BaseDeMots)-1)
         if NumberOfWord==old_NumberOfWord:
             NumberOfWord=random.randint(0,len(BaseDeMots)-1)
-        print("NOF",NumberOfWord)
         Update(NumberOfWord)
+        Last_Random=NumberOfWord
+        Last_Random_List.append(NumberOfWord)
     return NumberOfWord
 ###
 def Next():
     global NumberOfWord
+    global Last_Random
     if True:
+        Last_Random=-1
         NumberOfWord+=1
         if NumberOfWord>=len(BaseDeMots):
             NumberOfWord=len(BaseDeMots)-1
@@ -58,12 +65,20 @@ def Next():
 ###
 def Back():
     global NumberOfWord
+    global Last_Random
+    global Last_Random_List
     if True:
-        NumberOfWord-=1
-        if NumberOfWord<0:
-            NumberOfWord=0
-        Update(NumberOfWord)
-    return NumberOfWord
+        if Last_Random!=-1:
+            Last_Random=-1
+            NumberOfWord=Last_Random_List[(len(Last_Random_List)-2)]
+            #print(Last_Random_List)
+            Update(NumberOfWord)
+        else:
+            NumberOfWord-=1
+            if NumberOfWord<0:
+                NumberOfWord=0
+            Update(NumberOfWord)
+        return NumberOfWord
 
 def GitHubLink():
     if True:
@@ -124,6 +139,7 @@ canvas.pack()
 
 def Update(Numéro): 
     # Update the window content with the new word
+    print("N.O.F",NumberOfWord)
     on_click()
     if True:
             canvas.create_text((s_screen_width/first_colonne), (80), text=Rappel_CSV_Title[0],fill="red", font=s_font_family) ##1 
@@ -134,61 +150,101 @@ def Update(Numéro):
             canvas.create_text((s_screen_width/first_colonne), (560), text=Rappel_CSV_Title[5],fill=s_font_color, font=s_font_family) ##6
             if data_base_free_category==True: ##Free category 
                 canvas.create_text((s_screen_width/first_colonne), (640), text=Rappel_CSV_Title[6],fill=s_font_color, font=s_font_family) ##7
-            ###
             canvas.create_text((s_screen_width/scnd_colonne), (80), text=BaseDeMots[Numéro][1],fill="red", font=s_font_family) ##1
             canvas.create_text((s_screen_width/scnd_colonne), (160), text=BaseDeMots[Numéro][2],fill=s_font_color, font=s_font_family) ##2
             canvas.create_text((s_screen_width/scnd_colonne), (240), text=BaseDeMots[Numéro][3],fill="green", font=s_font_family) ##3
-            if len(BaseDeMots[Numéro][4])>=45: ##4
-                N4_1=(BaseDeMots[Numéro][4][:45]) ##4
-                N4_2=('-'+BaseDeMots[Numéro][4][45:]) ##4
-                if len(BaseDeMots[Numéro][4])>=90: ##4
-                    N4_1=(BaseDeMots[Numéro][4][:45]) ##4
-                    N4_2=('-'+BaseDeMots[Numéro][4][45:90]) ##4
-                    N4_3=('-'+BaseDeMots[Numéro][4][90:]) ##4
-                    canvas.create_text((s_screen_width/scnd_colonne), (320), text=N4_1,fill=s_font_color, font=s_font_family) ##4
-                    canvas.create_text((s_screen_width/scnd_colonne), (350), text=N4_2,fill=s_font_color, font=s_font_family) ##4
-                    canvas.create_text((s_screen_width/scnd_colonne), (380), text=N4_3,fill=s_font_color, font=s_font_family) ##4
-                else: ##4
-                    canvas.create_text((s_screen_width/scnd_colonne), (320), text=N4_1,fill=s_font_color, font=s_font_family) ##4
-                    canvas.create_text((s_screen_width/scnd_colonne), (350), text=N4_2,fill=s_font_color, font=s_font_family) ##4
-            else: ##4
-                canvas.create_text((s_screen_width/scnd_colonne), (320), text=BaseDeMots[Numéro][4],fill=s_font_color, font=s_font_family) ##4
             #################################################################################################################################
-            if len(BaseDeMots[Numéro][5])>=45: ##5
-                N5_1=(BaseDeMots[Numéro][5][:45]) ##5
-                N5_2=('-'+BaseDeMots[Numéro][5][45:]) ##5
-                if len(BaseDeMots[Numéro][5])>=90: ##5
-                    N5_1=(BaseDeMots[Numéro][5][:45]) ##5
-                    N5_2=('-'+BaseDeMots[Numéro][5][45:90]) ##5
-                    N5_3=('-'+BaseDeMots[Numéro][5][90:]) ##5
-                    canvas.create_text((s_screen_width/scnd_colonne), (420), text=N5_1,fill=s_font_color, font=s_font_family) ##5
-                    canvas.create_text((s_screen_width/scnd_colonne), (450), text=N5_2,fill=s_font_color, font=s_font_family) ##5
-                    canvas.create_text((s_screen_width/scnd_colonne), (480), text=N5_3,fill=s_font_color, font=s_font_family) ##5
-                else: ##5
-                    canvas.create_text((s_screen_width/scnd_colonne), (420), text=N5_1,fill=s_font_color, font=s_font_family) ##5
-                    canvas.create_text((s_screen_width/scnd_colonne), (450), text=N5_2,fill=s_font_color, font=s_font_family) ##5
-            else: ##5
-                canvas.create_text((s_screen_width/scnd_colonne), (420), text=BaseDeMots[Numéro][5],fill=s_font_color, font=s_font_family) ##5
+            N4_1=("")
+            N4_2=("")
+            N4_3=("")
+            #print("Len",len(BaseDeMots[Numéro][4]))
+            if len(BaseDeMots[Numéro][4])<=45:
+                N4_1=(BaseDeMots[Numéro][4][:45])
+                #
+            elif len(BaseDeMots[Numéro][4])<=90:
+                N4_1=(BaseDeMots[Numéro][4][:45])
+                #
+                N4_2=(BaseDeMots[Numéro][4][45:90])
+                if N4_1[len(N4_1)-1]!=" " or N4_1[len(N4_1)-1]!=",":
+                    if N4_2[0]!=" " or N4_2[0]!=",":
+                        N4_2="-"+N4_2
+                #
+            elif len(BaseDeMots[Numéro][4])<=135 and len(BaseDeMots[Numéro][4])>90:
+                N4_1=(BaseDeMots[Numéro][4][:45])
+                #
+                N4_2=(BaseDeMots[Numéro][4][45:90])
+                if N4_1[len(N4_1)-1]!=" " or N4_1[len(N4_1)-1]!=",":
+                    if N4_2[0]!=" " or N4_2[0]!=",":
+                        N4_2="-"+N4_2
+                #    
+                N4_3=(BaseDeMots[Numéro][4][90:135])
+                if N4_2[len(N4_2)-1]!=" " or N4_2[len(N4_2)-1]!=",":
+                    if N4_3[0]!=" " or N4_3[0]!=",":
+                        N4_3="-"+N4_3
+                #
+            canvas.create_text((s_screen_width/scnd_colonne), (320), text=N4_1,fill=s_font_color, font=s_font_family) ##4
+            canvas.create_text((s_screen_width/scnd_colonne), (350), text=N4_2,fill=s_font_color, font=s_font_family) ##4
+            canvas.create_text((s_screen_width/scnd_colonne), (380), text=N4_3,fill=s_font_color, font=s_font_family) ##4
+            #################################################################################################################################
+            N5_1=("")
+            N5_2=("")
+            N5_3=("")
+            #print("Len",len(BaseDeMots[Numéro][5]))
+            if len(BaseDeMots[Numéro][5])<=45:
+                N5_1=(BaseDeMots[Numéro][5][:45])
+                #
+            elif len(BaseDeMots[Numéro][5])<=90:
+                N5_1=(BaseDeMots[Numéro][5][:45])
+                #
+                N5_2=(BaseDeMots[Numéro][5][45:90])
+                if N5_1[len(N5_1)-1]!=" " or N5_1[len(N5_1)-1]!=",":
+                    if N5_2[0]!=" " or N5_2[0]!=",":
+                        N5_2="-"+N5_2
+                #
+            elif len(BaseDeMots[Numéro][5])<=135 and len(BaseDeMots[Numéro][5])>90:
+                N5_1=(BaseDeMots[Numéro][5][:45])
+                #
+                N5_2=(BaseDeMots[Numéro][5][45:90])
+                if N5_1[len(N5_1)-1]!=" " or N5_1[len(N5_1)-1]!=",":
+                    if N5_2[0]!=" " or N5_2[0]!=",":
+                        N5_2="-"+N5_2
+                #
+                N5_3=(BaseDeMots[Numéro][5][90:135])
+                if N5_2[len(N5_2)-1]!=" " or N5_2[len(N5_2)-1]!=",":
+                    if N5_3[0]!=" " or N5_3[0]!=",":
+                        N5_3="-"+N5_3
+                #
+            canvas.create_text((s_screen_width/scnd_colonne), (420), text=N5_1,fill=s_font_color, font=s_font_family) ##5
+            canvas.create_text((s_screen_width/scnd_colonne), (450), text=N5_2,fill=s_font_color, font=s_font_family) ##5
+            canvas.create_text((s_screen_width/scnd_colonne), (480), text=N5_3,fill=s_font_color, font=s_font_family) ##5
             #################################################################################################################################
             if len(BaseDeMots[Numéro][6])>=45: ##6
-                N6_1=(BaseDeMots[Numéro][6][:45]) ##6
-                N6_2=('-'+BaseDeMots[Numéro][6][45:]) ##6
+                N6_1=(BaseDeMots[Numéro][5][:45])
+                #
+                N6_2=(BaseDeMots[Numéro][5][45:])
+                if N6_1[len(N6_1)-1]!=" " or N6_1[len(N6_1)-1]!=",":
+                    if N6_2[0]!=" " or N6_2[0]!=",":
+                        N6_2="-"+N6_2
                 canvas.create_text((s_screen_width/scnd_colonne), (560), text=N6_1,fill=s_font_color, font=s_font_family) ##6
                 canvas.create_text((s_screen_width/scnd_colonne), (590), text=N6_2,fill=s_font_color, font=s_font_family) ##6
             else: ##5
                 canvas.create_text((s_screen_width/scnd_colonne), (560), text=BaseDeMots[Numéro][6],fill=s_font_color, font=s_font_family) ##6
             #################################################################################################################################
             if data_base_free_category==True: ##Free category ##7
-                if len(BaseDeMots[Numéro][7])>=45: ##7
-                    N7_1=(BaseDeMots[Numéro][7][:45]) ##7
-                    N7_2=('-'+BaseDeMots[Numéro][7][45:]) ##7
+                if len(BaseDeMots[Numéro][7])>=45: ##6
+                    N7_1=(BaseDeMots[Numéro][7][:45])
+                    #
+                    N7_2=(BaseDeMots[Numéro][7][45:])
+                    if N7_1[len(N7_1)-1]!=" " or N7_1[len(N7_1)-1]!=",":
+                        if N7_2[0]!=" " or N7_2[0]!=",":
+                            N7_2="-"+N7_2
                     canvas.create_text((s_screen_width/scnd_colonne), (640), text=N7_1,fill=s_font_color, font=s_font_family) ##7
                     canvas.create_text((s_screen_width/scnd_colonne), (670), text=N7_2,fill=s_font_color, font=s_font_family) ##7
                 else: ##5
                     canvas.create_text((s_screen_width/scnd_colonne), (640), text=BaseDeMots[Numéro][7],fill=s_font_color, font=s_font_family) ##7
             #################################################################################################################################
 ####End of the function Update####
-
+Next() #Show the first card at launch.
 root.mainloop()
 
 
