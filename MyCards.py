@@ -1,5 +1,5 @@
 #Version:
-#0.2.3
+#0.2.5
 ###
 import os ###  Librairie
 import csv ### Docs /  Librairie
@@ -136,7 +136,7 @@ if super_mode==True:
 ###
 canvas= Canvas(root, width=s_screen_width, height=s_screen_height, bg=s_zone_texte,highlightthickness=3, highlightbackground=s_contour_zone_texte)  
 canvas.pack()
-
+###
 def Update(Numéro): 
     # Update the window content with the new word
     print("N.O.F",NumberOfWord)
@@ -243,7 +243,18 @@ def Update(Numéro):
                 else: ##5
                     canvas.create_text((s_screen_width/scnd_colonne), (640), text=BaseDeMots[Numéro][7],fill=s_font_color, font=s_font_family) ##7
             #################################################################################################################################
+###
+def Randm(x): 
+    Randow_Word()
+def Nxt(x):
+    Next()
+def Bck(x):
+    Back()
 ####End of the function Update####
+root.bind("<space>",Randm) #Space BAR
+root.bind("<Left>",Bck) #Left Arrow
+root.bind("<Right>",Nxt) #Right Arrow
+###
 Next() #Show the first card at launch.
 root.mainloop()
 
