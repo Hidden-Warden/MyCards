@@ -1,5 +1,5 @@
 #Version:
-#0.2.5
+#0.3.0
 ###
 import os ###  Librairie
 import csv ### Docs /  Librairie
@@ -83,6 +83,16 @@ def Back():
 def GitHubLink():
     if True:
         webbrowser.open(GitHub)
+
+### Keyborad shortcuts
+def Randm(x): 
+    Randow_Word()
+def Nxt(x):
+    Next()
+def Bck(x):
+    Back()
+def Escp(x):
+    root.destroy()
 ###
 
 root = Tk()
@@ -139,9 +149,10 @@ canvas.pack()
 ###
 def Update(Numéro): 
     # Update the window content with the new word
-    print("N.O.F",NumberOfWord)
+    print("Card N°",NumberOfWord)
     on_click()
     if True:
+            #Lefft side
             canvas.create_text((s_screen_width/first_colonne), (80), text=Rappel_CSV_Title[0],fill="red", font=s_font_family) ##1 
             canvas.create_text((s_screen_width/first_colonne), (160), text=Rappel_CSV_Title[1],fill=s_font_color, font=s_font_family) ##2
             canvas.create_text((s_screen_width/first_colonne), (240), text=Rappel_CSV_Title[2],fill="green", font=s_font_family) ##3
@@ -150,10 +161,12 @@ def Update(Numéro):
             canvas.create_text((s_screen_width/first_colonne), (560), text=Rappel_CSV_Title[5],fill=s_font_color, font=s_font_family) ##6
             if data_base_free_category==True: ##Free category 
                 canvas.create_text((s_screen_width/first_colonne), (640), text=Rappel_CSV_Title[6],fill=s_font_color, font=s_font_family) ##7
+            #Right Side
             canvas.create_text((s_screen_width/scnd_colonne), (80), text=BaseDeMots[Numéro][1],fill="red", font=s_font_family) ##1
             canvas.create_text((s_screen_width/scnd_colonne), (160), text=BaseDeMots[Numéro][2],fill=s_font_color, font=s_font_family) ##2
             canvas.create_text((s_screen_width/scnd_colonne), (240), text=BaseDeMots[Numéro][3],fill="green", font=s_font_family) ##3
             #################################################################################################################################
+            #4
             N4_1=("")
             N4_2=("")
             N4_3=("")
@@ -186,6 +199,7 @@ def Update(Numéro):
             canvas.create_text((s_screen_width/scnd_colonne), (350), text=N4_2,fill=s_font_color, font=s_font_family) ##4
             canvas.create_text((s_screen_width/scnd_colonne), (380), text=N4_3,fill=s_font_color, font=s_font_family) ##4
             #################################################################################################################################
+            #5
             N5_1=("")
             N5_2=("")
             N5_3=("")
@@ -218,6 +232,7 @@ def Update(Numéro):
             canvas.create_text((s_screen_width/scnd_colonne), (450), text=N5_2,fill=s_font_color, font=s_font_family) ##5
             canvas.create_text((s_screen_width/scnd_colonne), (480), text=N5_3,fill=s_font_color, font=s_font_family) ##5
             #################################################################################################################################
+            #6
             if len(BaseDeMots[Numéro][6])>=45: ##6
                 N6_1=(BaseDeMots[Numéro][6][:45])
                 #
@@ -227,11 +242,12 @@ def Update(Numéro):
                         N6_2="-"+N6_2
                 canvas.create_text((s_screen_width/scnd_colonne), (560), text=N6_1,fill=s_font_color, font=s_font_family) ##6
                 canvas.create_text((s_screen_width/scnd_colonne), (590), text=N6_2,fill=s_font_color, font=s_font_family) ##6
-            else: ##5
+            else: ##6
                 canvas.create_text((s_screen_width/scnd_colonne), (560), text=BaseDeMots[Numéro][6],fill=s_font_color, font=s_font_family) ##6
             #################################################################################################################################
+            #7 Free column
             if data_base_free_category==True: ##Free category ##7
-                if len(BaseDeMots[Numéro][7])>=45: ##6
+                if len(BaseDeMots[Numéro][7])>=45: ##7
                     N7_1=(BaseDeMots[Numéro][7][:45])
                     #
                     N7_2=(BaseDeMots[Numéro][7][45:])
@@ -240,20 +256,15 @@ def Update(Numéro):
                             N7_2="-"+N7_2
                     canvas.create_text((s_screen_width/scnd_colonne), (640), text=N7_1,fill=s_font_color, font=s_font_family) ##7
                     canvas.create_text((s_screen_width/scnd_colonne), (670), text=N7_2,fill=s_font_color, font=s_font_family) ##7
-                else: ##5
+                else: ##7
                     canvas.create_text((s_screen_width/scnd_colonne), (640), text=BaseDeMots[Numéro][7],fill=s_font_color, font=s_font_family) ##7
             #################################################################################################################################
-###
-def Randm(x): 
-    Randow_Word()
-def Nxt(x):
-    Next()
-def Bck(x):
-    Back()
+
 ####End of the function Update####
 root.bind("<space>",Randm) #Space BAR
 root.bind("<Left>",Bck) #Left Arrow
 root.bind("<Right>",Nxt) #Right Arrow
+root.bind("<Escape>",Escp) #Echap / Escape
 ###
 Next() #Show the first card at launch.
 root.mainloop()
