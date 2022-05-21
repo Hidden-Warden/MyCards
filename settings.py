@@ -5,6 +5,8 @@ full_screen=False #True(Full screen), False(Windowed)
 reseizeable_windows=True #True(Resizeable windows), False(Fixed windows)
 s_delimiter=";" #Delimiter used in the CSV file (";" / ",")
 screenshot_type=".png" #Type of screenshot (".png" / ".jpg")
+adjust_screenshot_size=True #True(Adjust screenshot size) to the frame, False(Keep original size)
+
 
 first_colonne=5 #The higher the value, the more to the left
 scnd_colonne=2.2 #The higher the value, the more to the left
@@ -22,7 +24,7 @@ s_button_texte_color="#FFFFFF" #Couleur du texte BOUTON
 s_button_font_size=12 #Taille texte police BOUTON
 s_button_font_family='Open Sans' #Type de police BOUTON
 s_button_height=2 #Hauteur du bouton
-s_button_width=13 #Largeur du bouton
+s_button_width=12 #Largeur du bouton
 
 #In test#
 data_base_free_category=False #True(Shown), False(Hidden)

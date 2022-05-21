@@ -1,2 +1,2 @@
-FR=["Suivant","Retour","Mot aléatoire","Quitter","Menu","Paramètres","À propos","Image(s) Lié","Suivant","Retour"] 
-EN=["Next","Back","Random word","Quit","Menu","Settings","About","Update CSV","Image(s) Related","Next","Back"]
+FR=["Suivant","Retour","Mot aléatoire","Quitter","Menu","Paramètres","À propos","Capture d'écrant","Suivant","Retour"] 
+EN=["Next","Back","Random word","Quit","Menu","Settings","About","Update CSV","Screenshot","Next","Back"]

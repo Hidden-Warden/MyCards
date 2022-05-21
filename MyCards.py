@@ -1,14 +1,14 @@
 #Version:
-#0.4.3
+#0.4.5
 ###
 import os ###  Librairie
-import csv ### Docs /  Librairie
+import csv ### .py & Librairie
 import random ###  Librairie
 import webbrowser    ### Librairie
 import tkinter.font as font
 from tkinter import * ### Librairie
-from settings import * ### Docs
-from language_modules import * ### Docs
+from settings import * ### .py
+from language_modules import * ### .py
 ###
 Language=[] #List (will contain the words)
 NumberOfWord=-1 #The number of the word in the list (DataBase.csv)
@@ -85,6 +85,7 @@ def GitHubLink():
     if True:
         webbrowser.open(GitHub)
 ### Keyborad shortcuts
+
 def Randm(x): 
     Randow_Word()
 def Nxt(x):
@@ -93,6 +94,13 @@ def Bck(x):
     Back()
 def Escp(x):
     root.destroy()
+def IMG_related(x):
+    ImageRelated()
+def IMG_Next(x):
+    ImageNext()
+def IMG_Back(x):
+    ImageBack()
+
 ###
 def Update(Numéro): 
     # Update the window content with the new word
@@ -217,7 +225,7 @@ else:
     print("Directory already created")
 #End
 
-#########
+######### Images #########
 def ImageRelated():
     global ListScrennshot
     global ImageNum
@@ -241,12 +249,13 @@ def ImageRelated():
         print(path+ListScrennshot[0])
         img = PhotoImage(file=path+ListScrennshot[0]) 
         print('Found a screenshot for this word') 
-        #
-        canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
+        if adjust_screenshot_size==True:
+            img = img.zoom(2)
+            img=img.subsample(3)
+        canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, image=img)
         canvas.create_image()
         Activated=True
         return Activated
-
 
 def ImageNext():
     global ImageNum
@@ -257,7 +266,10 @@ def ImageNext():
         if len(ListScrennshot)>ImageNum+1:
             print('ok Next')
             ImageNum+=1
-            img = PhotoImage(file=path+ListScrennshot[ImageNum])   
+            img = PhotoImage(file=path+ListScrennshot[ImageNum])
+            if adjust_screenshot_size==True:
+                img = img.zoom(2)
+                img=img.subsample(3)
             canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
             canvas.create_image()
         else:
@@ -272,12 +284,15 @@ def ImageBack():
         if ImageNum>0:
             print('ok Back')
             ImageNum-=1
-            img = PhotoImage(file=path+ListScrennshot[ImageNum])   
+            img = PhotoImage(file=path+ListScrennshot[ImageNum])
+            if adjust_screenshot_size==True:
+                img = img.zoom(2)
+                img=img.subsample(3)
             canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
             canvas.create_image()
     else:
         ImageRelated()
-#########
+######### Images #########
 
 ###
 root = Tk()
@@ -341,7 +356,6 @@ if super_mode==True:
 canvas= Canvas(root, width=s_screen_width, height=s_screen_height, bg=s_zone_texte,highlightthickness=3, highlightbackground=s_contour_zone_texte) #Texte
 canvas2=Canvas(root, width=s_screen_width, height=s_screen_height) #Image
 canvas.pack()
-
 ###
 
 ####End of the function Update####
@@ -349,6 +363,11 @@ root.bind("<space>",Randm) #Space BAR
 root.bind("<Left>",Bck) #Left Arrow
 root.bind("<Right>",Nxt) #Right Arrow
 root.bind("<Escape>",Escp) #Echap / Escape
+
+root.bind("<b>",IMG_related) #Image Related ?
+root.bind("<n>",IMG_Next) #Image Next
+root.bind("<v>",IMG_Back) #Image Back
+
 ###
 Next() #Show the first card at launch.
 root.mainloop()
