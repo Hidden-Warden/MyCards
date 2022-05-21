@@ -1,5 +1,5 @@
 #Version:
-#0.4.0
+#0.4.1
 ###
 import os ###  Librairie
 import csv ### Docs /  Librairie
@@ -211,8 +211,10 @@ def Update(Numéro):
 def ImageRelated():
     global ListScrennshot
     global ImageNum
-    ListScrennshot==[]
+    global Activated
+    ListScrennshot=[]
     ImageNum=0
+    Activated=True #Was the function called?
     path = "Screenshots/"
     dir_list = os.listdir(path)
     ##
@@ -224,6 +226,7 @@ def ImageRelated():
     ##
     if ListScrennshot==[]:
         print("No screenshot for this word")
+        Activated=False
     else:
         print(path+ListScrennshot[0])
         img = PhotoImage(file=path+ListScrennshot[0]) 
@@ -231,29 +234,39 @@ def ImageRelated():
         #
         canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
         canvas.create_image()
+        Activated=True
+        return Activated
 
 
 def ImageNext():
     global ImageNum
-    path = "Screenshots/"
-    dir_list = os.listdir(path)
-    if len(ListScrennshot)>ImageNum+1:
-        print('ok Next')
-        ImageNum+=1
-        img = PhotoImage(file=path+ListScrennshot[ImageNum])   
-        canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
-        canvas.create_image()
+    global Activated
+    if Activated==True:
+        path = "Screenshots/"
+        dir_list = os.listdir(path)
+        if len(ListScrennshot)>ImageNum+1:
+            print('ok Next')
+            ImageNum+=1
+            img = PhotoImage(file=path+ListScrennshot[ImageNum])   
+            canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
+            canvas.create_image()
+        else:
+            ImageRelated()
 
 def ImageBack():
     global ImageNum
-    path = "Screenshots/"
-    dir_list = os.listdir(path)
-    if ImageNum>0:
-        print('ok Back')
-        ImageNum-=1
-        img = PhotoImage(file=path+ListScrennshot[ImageNum])   
-        canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
-        canvas.create_image()
+    global Activated
+    if Activated==True:
+        path = "Screenshots/"
+        dir_list = os.listdir(path)
+        if ImageNum>0:
+            print('ok Back')
+            ImageNum-=1
+            img = PhotoImage(file=path+ListScrennshot[ImageNum])   
+            canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
+            canvas.create_image()
+    else:
+        ImageRelated()
 #########
 
 ###
@@ -317,7 +330,6 @@ if super_mode==True:
 ###
 canvas= Canvas(root, width=s_screen_width, height=s_screen_height, bg=s_zone_texte,highlightthickness=3, highlightbackground=s_contour_zone_texte) #Texte
 canvas2=Canvas(root, width=s_screen_width, height=s_screen_height) #Image
-
 canvas.pack()
 
 ###
@@ -330,21 +342,3 @@ root.bind("<Escape>",Escp) #Echap / Escape
 ###
 Next() #Show the first card at launch.
 root.mainloop()
-
-
-
-###old features###
-
-#menubar = Menu(root) ##1
-#filemenu = Menu(menubar, tearoff=0) ##1
-#menubar.add_cascade(label=Language[4], menu=filemenu) ##-Ajoute le bouton principale "Menu" ##1
-
-"""
-from tkinter import *      
-root = Tk()      
-canvas = Canvas(root, width = 300, height = 300)      
-canvas.pack()      
-img = PhotoImage(file="ball.ppm")      
-canvas.create_image(20,20, anchor=NW, image=img)      
-mainloop() 
-"""
