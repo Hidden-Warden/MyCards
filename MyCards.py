@@ -1,5 +1,5 @@
 #Version:
-#0.3.0
+#0.4.0
 ###
 import os ###  Librairie
 import csv ### Docs /  Librairie
@@ -15,6 +15,7 @@ NumberOfWord=-1 #The number of the word in the list (DataBase.csv)
 GitHub="https://github.com/Hidden-Warden/MyCards/blob/main/README.md" #Link to GitHub ;D
 Last_Random=-1
 Last_Random_List=[]
+ListScrennshot=[]
 ###
 with open("DataBase.csv", encoding='utf-8', newline='') as csvfile:
     BaseDeMots=list(csv.reader(csvfile,delimiter=s_delimiter)) 
@@ -79,11 +80,10 @@ def Back():
                 NumberOfWord=0
             Update(NumberOfWord)
         return NumberOfWord
-
+###
 def GitHubLink():
     if True:
         webbrowser.open(GitHub)
-
 ### Keyborad shortcuts
 def Randm(x): 
     Randow_Word()
@@ -93,59 +93,6 @@ def Bck(x):
     Back()
 def Escp(x):
     root.destroy()
-###
-
-root = Tk()
-root.title("MyCards")
-root.iconbitmap("MyCards.ico")
-root.configure(background=s_background_color)
-root.attributes('-fullscreen', full_screen)
-###
-if s_screen_height > 150 and s_screen_width > 100:
-    root.geometry(str(s_screen_width)+"x"+str(s_screen_height))
-else: #Default size
-    root.geometry("600x500")
-###
-if reseizeable_windows==True:
-    root.resizable(True,True)
-else:
-    root.resizable(False,False)
-###////###
-language(s_language) #Call the language function.
-
-### All the buttons shown in the window ### 
-btn1 = Button(root, text =Language[2], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =Randow_Word) #Bouton#// Random
-btn1.pack(side = 'top')
-    #
-btn2 = Button(root, text =Language[3], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command = root.destroy) #Bouton#// Quit
-btn2.place(rely=1.0, relx=1.0, x=0, y=0, anchor=SE)
-    #
-btn3 = Button(root, text =Language[1], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =Back) #Bouton#// Back
-btn3.pack(side = 'left')
-    #
-btn4 = Button(root, text =Language[0], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =Next) #Bouton#// Next
-btn4.pack(side = 'right')
-    #
-btn5 = Button(root, text =Language[6], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =GitHubLink) #Bouton#// About
-btn5.pack(side='bottom')
-
-if super_mode==True:
-    btn6 = Button(root, text =Language[7], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =GitHubLink) #Bouton#// Super Mode
-    btn6.pack(anchor=W)
- ### End of the buttons ###
-
-# Font and size of the buttons
-f = font.Font(family=s_button_font_family, size=s_button_font_size)
-btn1['font'] = f
-btn2['font'] = f
-btn3['font'] = f
-btn4['font'] = f
-btn5['font'] = f
-if super_mode==True:
-    btn6['font'] = f
-###
-canvas= Canvas(root, width=s_screen_width, height=s_screen_height, bg=s_zone_texte,highlightthickness=3, highlightbackground=s_contour_zone_texte)  
-canvas.pack()
 ###
 def Update(Numéro): 
     # Update the window content with the new word
@@ -258,7 +205,122 @@ def Update(Numéro):
                     canvas.create_text((s_screen_width/scnd_colonne), (670), text=N7_2,fill=s_font_color, font=s_font_family) ##7
                 else: ##7
                     canvas.create_text((s_screen_width/scnd_colonne), (640), text=BaseDeMots[Numéro][7],fill=s_font_color, font=s_font_family) ##7
-            #################################################################################################################################
+####
+
+#########
+def ImageRelated():
+    global ListScrennshot
+    global ImageNum
+    ListScrennshot==[]
+    ImageNum=0
+    path = "Screenshots/"
+    dir_list = os.listdir(path)
+    ##
+    for loop in range(len(dir_list)):
+        howmuch=dir_list[loop][3:4] # Get the number of the screenshot for the same word
+        if dir_list[loop]==("#"+str(NumberOfWord)+"-"+howmuch+".png"): # If the screenshot is the for the sale word
+            print("OK",("#"+str(NumberOfWord)+"-"+howmuch+".png"))
+            ListScrennshot.append(("#"+str(NumberOfWord)+"-"+howmuch+".png"))
+    ##
+    if ListScrennshot==[]:
+        print("No screenshot for this word")
+    else:
+        print(path+ListScrennshot[0])
+        img = PhotoImage(file=path+ListScrennshot[0]) 
+        print('Found a screenshot for this word') 
+        #
+        canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
+        canvas.create_image()
+
+
+def ImageNext():
+    global ImageNum
+    path = "Screenshots/"
+    dir_list = os.listdir(path)
+    if len(ListScrennshot)>ImageNum+1:
+        print('ok Next')
+        ImageNum+=1
+        img = PhotoImage(file=path+ListScrennshot[ImageNum])   
+        canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
+        canvas.create_image()
+
+def ImageBack():
+    global ImageNum
+    path = "Screenshots/"
+    dir_list = os.listdir(path)
+    if ImageNum>0:
+        print('ok Back')
+        ImageNum-=1
+        img = PhotoImage(file=path+ListScrennshot[ImageNum])   
+        canvas2=canvas.create_image(s_screen_width/3,s_screen_height/3, anchor=CENTER, image=img)
+        canvas.create_image()
+#########
+
+###
+root = Tk()
+root.title("MyCards")
+root.iconbitmap("MyCards.ico")
+root.configure(background=s_background_color)
+root.attributes('-fullscreen', full_screen)
+###
+if s_screen_height > 150 and s_screen_width > 100:
+    root.geometry(str(s_screen_width)+"x"+str(s_screen_height))
+else: #Default size
+    root.geometry("600x500")
+###
+if reseizeable_windows==True:
+    root.resizable(True,True)
+else:
+    root.resizable(False,False)
+###////###
+language(s_language) #Call the language function.
+
+### All the buttons shown in the window ### 
+btn1 = Button(root, text =Language[2], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =Randow_Word) #Bouton#// Random
+btn1.pack(side = 'top')
+    #
+btn2 = Button(root, text =Language[3], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command = root.destroy) #Bouton#// Quit
+btn2.place(rely=1.0, relx=1.0, x=0, y=0, anchor=SE)
+    #
+btn3 = Button(root, text =Language[1], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =Back) #Bouton#// Back
+btn3.pack(side = 'left')
+    #
+btn4 = Button(root, text =Language[0], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =Next) #Bouton#// Next
+btn4.pack(side = 'right')
+    #
+btn5 = Button(root, text =Language[6], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =GitHubLink) #Bouton#// About
+btn5.pack(side='bottom')
+
+btn7 = Button(root, text =Language[8], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =ImageRelated) #Bouton#// About
+btn7.place(rely=0, relx=0, x=0, y=100,anchor=W)
+
+btn8 = Button(root, text =Language[9], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =ImageNext) #Bouton#// About
+btn8.place(rely=0, relx=0, x=0, y=150,anchor=W)
+
+btn9 = Button(root, text =Language[10], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =ImageBack) #Bouton#// About
+btn9.place(rely=0, relx=0, x=0, y=200,anchor=W)
+
+if super_mode==True:
+    btn6 = Button(root, text =Language[7], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =GitHubLink) #Bouton#// Super Mode
+    btn6.pack(anchor=W)
+ ### End of the buttons ###
+
+# Font and size of the buttons
+f = font.Font(family=s_button_font_family, size=s_button_font_size)
+btn1['font'] = f
+btn2['font'] = f
+btn3['font'] = f
+btn4['font'] = f
+btn5['font'] = f
+if super_mode==True:
+    btn6['font'] = f
+###
+canvas= Canvas(root, width=s_screen_width, height=s_screen_height, bg=s_zone_texte,highlightthickness=3, highlightbackground=s_contour_zone_texte) #Texte
+canvas2=Canvas(root, width=s_screen_width, height=s_screen_height) #Image
+
+canvas.pack()
+
+###
 
 ####End of the function Update####
 root.bind("<space>",Randm) #Space BAR
@@ -276,3 +338,13 @@ root.mainloop()
 #menubar = Menu(root) ##1
 #filemenu = Menu(menubar, tearoff=0) ##1
 #menubar.add_cascade(label=Language[4], menu=filemenu) ##-Ajoute le bouton principale "Menu" ##1
+
+"""
+from tkinter import *      
+root = Tk()      
+canvas = Canvas(root, width = 300, height = 300)      
+canvas.pack()      
+img = PhotoImage(file="ball.ppm")      
+canvas.create_image(20,20, anchor=NW, image=img)      
+mainloop() 
+"""
