@@ -4,6 +4,7 @@ darkmode=False #True(Dark mode), False(Light mode)
 full_screen=False #True(Full screen), False(Windowed)
 reseizeable_windows=True #True(Resizeable windows), False(Fixed windows)
 s_delimiter=";" #Delimiter used in the CSV file (";" / ",")
+screenshot_type=".png" #Type of screenshot (".png" / ".jpg")
 
 first_colonne=5 #The higher the value, the more to the left
 scnd_colonne=2.2 #The higher the value, the more to the left

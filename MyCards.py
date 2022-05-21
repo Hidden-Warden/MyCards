@@ -1,5 +1,5 @@
 #Version:
-#0.4.1
+#0.4.3
 ###
 import os ###  Librairie
 import csv ### Docs /  Librairie
@@ -207,6 +207,16 @@ def Update(Numéro):
                     canvas.create_text((s_screen_width/scnd_colonne), (640), text=BaseDeMots[Numéro][7],fill=s_font_color, font=s_font_family) ##7
 ####
 
+#Start- Check if the folder exists
+path0 = "Screenshots"
+isExist = os.path.exists(path0)
+if False == isExist: # If the folder does not exist, create it
+    os.makedirs(path0)
+    print("Directory created successfully") # If the folder is created successfully, print this message
+else:
+    print("Directory already created")
+#End
+
 #########
 def ImageRelated():
     global ListScrennshot
@@ -220,9 +230,9 @@ def ImageRelated():
     ##
     for loop in range(len(dir_list)):
         howmuch=dir_list[loop][3:4] # Get the number of the screenshot for the same word
-        if dir_list[loop]==("#"+str(NumberOfWord)+"-"+howmuch+".png"): # If the screenshot is the for the sale word
-            print("OK",("#"+str(NumberOfWord)+"-"+howmuch+".png"))
-            ListScrennshot.append(("#"+str(NumberOfWord)+"-"+howmuch+".png"))
+        if dir_list[loop]==("#"+str(NumberOfWord)+"-"+howmuch+screenshot_type): # If the screenshot is the for the sale word
+            print("OK",("#"+str(NumberOfWord)+"-"+howmuch+screenshot_type))
+            ListScrennshot.append(("#"+str(NumberOfWord)+"-"+howmuch+screenshot_type))
     ##
     if ListScrennshot==[]:
         print("No screenshot for this word")
