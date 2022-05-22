@@ -43,6 +43,24 @@ Download the new released on GitHub, extract the.zip file and transfert/copy the
 #### -Font used in the screenshot is from Google Fonts
 https://fonts.google.com/specimen/Open+Sans
 
+### -How to add your own screenshot and how it is working ?
+
+- Go in the folder called "Screenshots" I you don't see it, just launch the program once.
+How to name your file. It's simple. **Let's take an example:**
+For my first card (word) I want to put an image with a flower on it. So because it is my first card, I will call it
+- `#0-1.png` 
+- `#` <=  For the program to understand that this is a screenshot that you want to use
+- `0` <= First card | Yes the first card is 0 / the second 1 etc...
+- `-1 `<= The first screenshot for that word, but your not limited to one image. Ex: `#0-5.png` 
+
+I will also soon release a new version with some test image for you to see.
+
+There also new keyboard shortcut, made for using the screenshot option.
+
+- `B` Show the screenshot related to the word. It will show if it exist
+- `N`Go to the next screenshot (Will not work if there's only one.
+- `V` Go back 
+
 If you see my project, and try it out, I would love to have your feedback ! :D
 And please don't hesitate to correct me!
 
