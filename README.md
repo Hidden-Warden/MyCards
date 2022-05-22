@@ -61,6 +61,8 @@ There also new keyboard shortcut, made for using the screenshot option.
 - `N`Go to the next screenshot (Will not work if there's only one.
 - `V` Go back 
 
+#### -Why are my screenshots & images pixelated ?
+- It's because you activated the following setting: `adjust_screenshot_size`. Unfortunately, when activated, to rezeise the image, I use two function, on to zoom in and another to zoom out, and by doing this the image become pixelated. I haven't found any other way to match the picture to the canva.
 If you see my project, and try it out, I would love to have your feedback ! :D
 And please don't hesitate to correct me!
 
