@@ -1,6 +1,7 @@
 #Version:
-#0.4.5
+#0.5.0
 ###
+from ast import Num
 import os ###  Librairie
 import csv ### .py & Librairie
 import random ###  Librairie
@@ -11,7 +12,7 @@ from settings import * ### .py
 from language_modules import * ### .py
 ###
 Language=[] #List (will contain the words)
-NumberOfWord=-1 #The number of the word in the list (DataBase.csv)
+NumberOfWord=0 #The number of the word in the list (DataBase.csv)
 GitHub="https://github.com/Hidden-Warden/MyCards/blob/main/README.md" #Link to GitHub ;D
 Last_Random=-1
 Last_Random_List=[]
@@ -22,7 +23,6 @@ with open("DataBase.csv", encoding='utf-8', newline='') as csvfile:
     Rappel_CSV_Title=BaseDeMots[0]
     Rappel_CSV_Title.pop(0)
     print("Rappel_CSV_Title",Rappel_CSV_Title)
-    BaseDeMots.pop(0) # Delete the first line in BaseDeMots
 ###
 def language(input_language):
     ##Choice of the language from the settings:
@@ -47,10 +47,12 @@ def Randow_Word():
         old_NumberOfWord=NumberOfWord
         NumberOfWord=random.randint(0,len(BaseDeMots)-1)
         if NumberOfWord==old_NumberOfWord:
-            NumberOfWord=random.randint(0,len(BaseDeMots)-1)
-        Update(NumberOfWord)
+            NumberOfWord=random.randint(0,len(BaseDeMots))
+        if NumberOfWord==0:
+            NumberOfWord=1
         Last_Random=NumberOfWord
         Last_Random_List.append(NumberOfWord)
+        Update(NumberOfWord)
     return NumberOfWord
 ###
 def Next():
@@ -73,12 +75,15 @@ def Back():
             Last_Random=-1
             NumberOfWord=Last_Random_List[(len(Last_Random_List)-2)]
             #print(Last_Random_List)
-            Update(NumberOfWord)
         else:
             NumberOfWord-=1
             if NumberOfWord<0:
                 NumberOfWord=0
-            Update(NumberOfWord)
+            
+        if NumberOfWord==0:
+            NumberOfWord=1
+
+        Update(NumberOfWord)
         return NumberOfWord
 ###
 def GitHubLink():
@@ -120,6 +125,10 @@ def Update(Numéro):
             canvas.create_text((s_screen_width/scnd_colonne), (80), text=BaseDeMots[Numéro][1],fill="red", font=s_font_family) ##1
             canvas.create_text((s_screen_width/scnd_colonne), (160), text=BaseDeMots[Numéro][2],fill=s_font_color, font=s_font_family) ##2
             canvas.create_text((s_screen_width/scnd_colonne), (240), text=BaseDeMots[Numéro][3],fill="green", font=s_font_family) ##3
+
+            btn10 = Button(root, text =(Language[11]+str(NumberOfWord)), activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0) #Bouton#// About
+            btn10.place(rely=0, relx=0, x=0, y=600,anchor=W)
+
             #################################################################################################################################
             #4
             N4_1=("")
@@ -237,10 +246,17 @@ def ImageRelated():
     dir_list = os.listdir(path)
     ##
     for loop in range(len(dir_list)):
-        howmuch=dir_list[loop][3:4] # Get the number of the screenshot for the same word
+        howmuch=dir_list[loop][3:4] # Get the number of the screenshot for the same word (0-9)
+        if howmuch=="-":
+            howmuch=dir_list[loop][4:5]
+        print(howmuch)
+
         if dir_list[loop]==("#"+str(NumberOfWord)+"-"+howmuch+screenshot_type): # If the screenshot is the for the sale word
             print("OK",("#"+str(NumberOfWord)+"-"+howmuch+screenshot_type))
             ListScrennshot.append(("#"+str(NumberOfWord)+"-"+howmuch+screenshot_type))
+        print("How much",howmuch)
+        print("ListScrennshot",ListScrennshot)
+        print("num",NumberOfWord)
     ##
     if ListScrennshot==[]:
         print("No screenshot for this word")
@@ -341,6 +357,7 @@ btn9.place(rely=0, relx=0, x=0, y=200,anchor=W)
 if super_mode==True:
     btn6 = Button(root, text =Language[7], activebackground=s_button_color_active,bg=s_button_color_unactive,fg=s_button_texte_color,height=s_button_height, width=s_button_width,borderwidth = 0,command =GitHubLink) #Bouton#// Super Mode
     btn6.pack(anchor=W)
+
  ### End of the buttons ###
 
 # Font and size of the buttons
