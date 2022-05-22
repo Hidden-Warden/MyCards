@@ -1,5 +1,5 @@
 #Version:
-#0.5.0
+#0.6.0
 ###
 from ast import Num
 import os ###  Librairie
@@ -239,32 +239,52 @@ def ImageRelated():
     global ListScrennshot
     global ImageNum
     global Activated
+    global Final
     ListScrennshot=[]
     ImageNum=0
     Activated=True #Was the function called?
     path = "Screenshots/"
     dir_list = os.listdir(path)
     ##
-    for loop in range(len(dir_list)):
-        howmuch=dir_list[loop][3:4] # Get the number of the screenshot for the same word (0-9)
-        if howmuch=="-":
-            howmuch=dir_list[loop][4:5]
-        print(howmuch)
-
-        if dir_list[loop]==("#"+str(NumberOfWord)+"-"+howmuch+screenshot_type): # If the screenshot is the for the sale word
-            print("OK",("#"+str(NumberOfWord)+"-"+howmuch+screenshot_type))
-            ListScrennshot.append(("#"+str(NumberOfWord)+"-"+howmuch+screenshot_type))
-        print("How much",howmuch)
-        print("ListScrennshot",ListScrennshot)
-        print("num",NumberOfWord)
-    ##
-    if ListScrennshot==[]:
+    for i in range(0,99):
+        try:
+            if NumberOfWord<=9:
+                if dir_list[i][2:3]=="-": #9
+                    ListScrennshot.append(dir_list[i])
+            elif NumberOfWord>=10 and NumberOfWord<=99:
+                if dir_list[i][3:4]=="-": #10
+                    ListScrennshot.append(dir_list[i])
+            elif NumberOfWord>=100 and NumberOfWord<=999:
+                if dir_list[i][4:5]=="-": #100
+                    ListScrennshot.append(dir_list[i])
+            elif NumberOfWord>=1000:
+                if dir_list[i][5:6]=="-": #1000
+                    ListScrennshot.append(dir_list[i])
+        except:
+           pass
+        
+    print(ListScrennshot,"Liste des Screenshots")
+    Final=[]
+    Sample=[]
+    if ListScrennshot!=[]:
+        for u in range(0,99):
+            Sample.append(str("#"+str(NumberOfWord)+"-"+str(u)+screenshot_type))
+        print(Sample,"Sample")
+        for i in range(0,99):
+            for u in range(0,99):
+                try:
+                    if Sample[i]==ListScrennshot[u]:
+                        Final.append(Sample[i])
+                except:
+                    pass
+    if Final==[]: #No screenshot was found
         print("No screenshot for this word")
         Activated=False
-    else:
-        print(path+ListScrennshot[0])
-        img = PhotoImage(file=path+ListScrennshot[0]) 
+        print(Final,"Final")
+    else: #If there is a screenshot
         print('Found a screenshot for this word') 
+        print(Final,"Final")
+        img = PhotoImage(file=path+Final[0]) 
         if adjust_screenshot_size==True:
             img = img.zoom(2)
             img=img.subsample(3)
@@ -272,6 +292,7 @@ def ImageRelated():
         canvas.create_image()
         Activated=True
         return Activated
+### End of ImageRelated()
 
 def ImageNext():
     global ImageNum
@@ -279,10 +300,10 @@ def ImageNext():
     if Activated==True:
         path = "Screenshots/"
         dir_list = os.listdir(path)
-        if len(ListScrennshot)>ImageNum+1:
+        if len(Final)>ImageNum+1:
             print('ok Next')
             ImageNum+=1
-            img = PhotoImage(file=path+ListScrennshot[ImageNum])
+            img = PhotoImage(file=path+Final[ImageNum])
             if adjust_screenshot_size==True:
                 img = img.zoom(2)
                 img=img.subsample(3)
@@ -300,7 +321,7 @@ def ImageBack():
         if ImageNum>0:
             print('ok Back')
             ImageNum-=1
-            img = PhotoImage(file=path+ListScrennshot[ImageNum])
+            img = PhotoImage(file=path+Final[ImageNum])
             if adjust_screenshot_size==True:
                 img = img.zoom(2)
                 img=img.subsample(3)
