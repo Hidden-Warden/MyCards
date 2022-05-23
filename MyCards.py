@@ -1,5 +1,5 @@
 #Version:
-#0.6.0
+#0.6.1
 ###
 from ast import Num
 import os ###  Librairie
@@ -267,11 +267,12 @@ def ImageRelated():
     Final=[]
     Sample=[]
     if ListScrennshot!=[]:
-        for u in range(0,99):
+        for u in range(0,101):
             Sample.append(str("#"+str(NumberOfWord)+"-"+str(u)+screenshot_type))
         print(Sample,"Sample")
-        for i in range(0,99):
-            for u in range(0,99):
+        print(ListScrennshot,"Liste des Screenshots")
+        for i in range(0,101):
+            for u in range(0,101):
                 try:
                     if Sample[i]==ListScrennshot[u]:
                         Final.append(Sample[i])
