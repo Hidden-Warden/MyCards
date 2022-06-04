@@ -1,29 +1,17 @@
 #Version:
-#0.6.1
+#0.7.0
 ###
-from ast import Num
-import os ###  Librairie
-import csv ### .py & Librairie
-import random ###  Librairie
-import webbrowser    ### Librairie
-import tkinter.font as font
-from tkinter import * ### Librairie
-from settings import * ### .py
-from language_modules import * ### .py
-###
-Language=[] #List (will contain the words)
-NumberOfWord=0 #The number of the word in the list (DataBase.csv)
-GitHub="https://github.com/Hidden-Warden/MyCards/blob/main/README.md" #Link to GitHub ;D
-Last_Random=-1
-Last_Random_List=[]
-ListScrennshot=[]
-###
-with open("DataBase.csv", encoding='utf-8', newline='') as csvfile:
-    BaseDeMots=list(csv.reader(csvfile,delimiter=s_delimiter)) 
-    Rappel_CSV_Title=BaseDeMots[0]
-    Rappel_CSV_Title.pop(0)
-    print("Rappel_CSV_Title",Rappel_CSV_Title)
-###
+import os ###  Librairie #4
+import csv ### .py & Librairie #5
+import random ###  Librairie #6
+import webbrowser    ### Librairie #7
+import tkinter.font as font ### Librairie #8
+from tkinter import * ### Librairie #9
+from settings import * ### .py #10
+from language_modules import * ### .py #11
+
+##///DEF\\\##
+
 def language(input_language):
     ##Choice of the language from the settings:
     global Language
@@ -90,7 +78,6 @@ def GitHubLink():
     if True:
         webbrowser.open(GitHub)
 ### Keyborad shortcuts
-
 def Randm(x): 
     Randow_Word()
 def Nxt(x):
@@ -105,7 +92,6 @@ def IMG_Next(x):
     ImageNext()
 def IMG_Back(x):
     ImageBack()
-
 ###
 def Update(Numéro): 
     # Update the window content with the new word
@@ -224,16 +210,6 @@ def Update(Numéro):
                     canvas.create_text((s_screen_width/scnd_colonne), (640), text=BaseDeMots[Numéro][7],fill=s_font_color, font=s_font_family) ##7
 ####
 
-#Start- Check if the folder exists
-path0 = "Screenshots"
-isExist = os.path.exists(path0)
-if False == isExist: # If the folder does not exist, create it
-    os.makedirs(path0)
-    print("Directory created successfully") # If the folder is created successfully, print this message
-else:
-    print("Directory already created")
-#End
-
 ######### Images #########
 def ImageRelated():
     global ListScrennshot
@@ -293,8 +269,7 @@ def ImageRelated():
         canvas.create_image()
         Activated=True
         return Activated
-### End of ImageRelated()
-
+    ### End of ImageRelated()
 def ImageNext():
     global ImageNum
     global Activated
@@ -312,7 +287,7 @@ def ImageNext():
             canvas.create_image()
         else:
             ImageRelated()
-
+    ### End of ImageNext()
 def ImageBack():
     global ImageNum
     global Activated
@@ -330,9 +305,38 @@ def ImageBack():
             canvas.create_image()
     else:
         ImageRelated()
+    ### End of ImageBack()
 ######### Images #########
 
+##///END_DEF\\\##
+
+
+##///MAIN\\\##
+Language=[] #List (will contain the words)
+NumberOfWord=0 #The number of the word in the list (DataBase.csv)
+GitHub="https://github.com/Hidden-Warden/MyCards/blob/main/README.md" #Link to GitHub ;D
+Last_Random=-1
+Last_Random_List=[]
+ListScrennshot=[]
 ###
+with open("DataBase.csv", encoding='utf-8', newline='') as csvfile:
+    BaseDeMots=list(csv.reader(csvfile,delimiter=s_delimiter)) 
+    Rappel_CSV_Title=BaseDeMots[0]
+    Rappel_CSV_Title.pop(0)
+    print("Rappel_CSV_Title",Rappel_CSV_Title)
+###
+
+#Start- Check if the folder exists
+path0 = "Screenshots"
+isExist = os.path.exists(path0)
+if False == isExist: # If the folder does not exist, create it
+    os.makedirs(path0)
+    print("Directory created successfully") # If the folder is created successfully, print this message
+else:
+    print("Directory already created")
+#End
+
+##
 root = Tk()
 root.title("MyCards")
 root.iconbitmap("MyCards.ico")
