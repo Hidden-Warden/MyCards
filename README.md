@@ -66,3 +66,8 @@ There also new keyboard shortcut, made for using the screenshot option.
 If you see my project, and try it out, I would love to have your feedback ! :D
 And please don't hesitate to correct me!
 
+#### -Can I use MyCards on my iPhone ?
+-Yes it's now possible with this [Shortcuts](https://www.icloud.com/shortcuts/f7fdae15eb864ef3818e640538cfb5db) .
+Select the file location & edit the categories names.
+
+I can't sadly made the same for Android sorry. 
