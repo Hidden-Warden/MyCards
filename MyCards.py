@@ -1,5 +1,5 @@
 #Version:
-#0.7.0
+#0.7.5
 ###
 import os ###  Librairie #4
 import csv ### .py & Librairie #5
@@ -219,7 +219,7 @@ def ImageRelated():
     ListScrennshot=[]
     ImageNum=0
     Activated=True #Was the function called?
-    path = "Screenshots/"
+    path = Screenshots_Folder_Path
     dir_list = os.listdir(path)
     ##
     for i in range(0,99):
@@ -274,7 +274,7 @@ def ImageNext():
     global ImageNum
     global Activated
     if Activated==True:
-        path = "Screenshots/"
+        path = Screenshots_Folder_Path
         dir_list = os.listdir(path)
         if len(Final)>ImageNum+1:
             print('ok Next')
@@ -292,7 +292,7 @@ def ImageBack():
     global ImageNum
     global Activated
     if Activated==True:
-        path = "Screenshots/"
+        path = Screenshots_Folder_Path
         dir_list = os.listdir(path)
         if ImageNum>0:
             print('ok Back')

@@ -6,7 +6,7 @@ reseizeable_windows=True #True(Resizeable windows), False(Fixed windows)
 s_delimiter=";" #Delimiter used in the CSV file (";" / ",")
 screenshot_type=".png" #Type of screenshot (".png" / ".jpg")
 adjust_screenshot_size=True #True(Adjust screenshot size) to the frame, False(Keep original size)
-
+Screenshots_Folder_Path="Screenshots/" #Path to the Screenshots folder | "Screenshots/" default (if in the same folder as the program) | "C:/Folder1/Screenshots-MyCards/" don't forget the "/" at the end and replace all the "\" by "/" in the path
 
 first_colonne=5 #The higher the value, the more to the left
 scnd_colonne=2.2 #The higher the value, the more to the left
