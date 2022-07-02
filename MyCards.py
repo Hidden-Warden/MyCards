@@ -1,5 +1,5 @@
 #Version:
-#0.7.5
+#0.7.6
 ###
 import os ###  Librairie #4
 import csv ### .py & Librairie #5
@@ -11,7 +11,6 @@ from settings import * ### .py #10
 from language_modules import * ### .py #11
 
 ##///DEF\\\##
-
 def language(input_language):
     ##Choice of the language from the settings:
     global Language
@@ -77,6 +76,7 @@ def Back():
 def GitHubLink():
     if True:
         webbrowser.open(GitHub)
+
 ### Keyborad shortcuts
 def Randm(x): 
     Randow_Word()
@@ -93,6 +93,7 @@ def IMG_Next(x):
 def IMG_Back(x):
     ImageBack()
 ###
+
 def Update(Numéro): 
     # Update the window content with the new word
     print("Card N°",NumberOfWord)
@@ -308,10 +309,10 @@ def ImageBack():
     ### End of ImageBack()
 ######### Images #########
 
-##///END_DEF\\\##
+##///END_DEF\\\##  ##///END_DEF\\\##  ##///END_DEF\\\##
 
 
-##///MAIN\\\##
+##///MAIN\\\##  ##///MAIN\\\##  ##///MAIN\\\##
 Language=[] #List (will contain the words)
 NumberOfWord=0 #The number of the word in the list (DataBase.csv)
 GitHub="https://github.com/Hidden-Warden/MyCards/blob/main/README.md" #Link to GitHub ;D
@@ -326,14 +327,14 @@ with open("DataBase.csv", encoding='utf-8', newline='') as csvfile:
     print("Rappel_CSV_Title",Rappel_CSV_Title)
 ###
 
-#Start- Check if the folder exists
+#Start- Check if the folder exists and create it if not (event if the path for the screenshots was changed.)
 path0 = "Screenshots"
 isExist = os.path.exists(path0)
 if False == isExist: # If the folder does not exist, create it
     os.makedirs(path0)
-    print("Directory created successfully") # If the folder is created successfully, print this message
+    print("Directory created successfully (Screenshots)") # If the folder is created successfully, print this message
 else:
-    print("Directory already created")
+    print("Directory already created (Screenshots)")
 #End
 
 ##
