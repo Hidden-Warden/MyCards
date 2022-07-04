@@ -67,7 +67,7 @@ If you see my project, and try it out, I would love to have your feedback ! :D
 And please don't hesitate to correct me!
 
 ### -Can I use MyCards on my iPhone ?
--Yes it's now possible with this [Shortcuts](https://www.icloud.com/shortcuts/f7fdae15eb864ef3818e640538cfb5db) .
+-Yes it's now possible with this [MyCards 1.0](https://www.icloud.com/shortcuts/f7fdae15eb864ef3818e640538cfb5db) & [MyCards 1.0 Get](https://www.icloud.com/shortcuts/f29af42af8ea4520b6ae83cccc4fb729) with this one (Get), you can choose which Card you want to see.
 Select the file location & edit the categories names.
 
 I can't sadly made the same for Android sorry. 
