@@ -1,5 +1,5 @@
 #Version:
-#0.7.6
+#0.8.0
 ###
 import os ###  Librairie #4
 import csv ### .py & Librairie #5
@@ -154,6 +154,7 @@ def Update(Numéro):
             N5_1=("")
             N5_2=("")
             N5_3=("")
+            N5_4=("")
             #print("Len",len(BaseDeMots[Numéro][5]))
             if len(BaseDeMots[Numéro][5])<=45:
                 N5_1=(BaseDeMots[Numéro][5][:45])
@@ -179,9 +180,28 @@ def Update(Numéro):
                     if N5_3[0]!=" " or N5_3[0]!=",":
                         N5_3="-"+N5_3
                 #
+            elif len(BaseDeMots[Numéro][5])<=180 and len(BaseDeMots[Numéro][5])>135:
+                N5_1=(BaseDeMots[Numéro][5][:45])
+                #
+                N5_2=(BaseDeMots[Numéro][5][45:90])
+                if N5_1[len(N5_1)-1]!=" " or N5_1[len(N5_1)-1]!=",":
+                    if N5_2[0]!=" " or N5_2[0]!=",":
+                        N5_2="-"+N5_2
+                #
+                N5_3=(BaseDeMots[Numéro][5][90:135])
+                if N5_2[len(N5_2)-1]!=" " or N5_2[len(N5_2)-1]!=",":
+                    if N5_3[0]!=" " or N5_3[0]!=",":
+                        N5_3="-"+N5_3
+                #
+                N5_4=(BaseDeMots[Numéro][5][135:180])
+                if N5_3[len(N5_3)-1]!=" " or N5_3[len(N5_3)-1]!=",":
+                    if N5_4[0]!=" " or N5_4[0]!=",":
+                        N5_4="-"+N5_4
+
             canvas.create_text((s_screen_width/scnd_colonne), (420), text=N5_1,fill=s_font_color, font=s_font_family) ##5
             canvas.create_text((s_screen_width/scnd_colonne), (450), text=N5_2,fill=s_font_color, font=s_font_family) ##5
             canvas.create_text((s_screen_width/scnd_colonne), (480), text=N5_3,fill=s_font_color, font=s_font_family) ##5
+            canvas.create_text((s_screen_width/scnd_colonne), (510), text=N5_4,fill=s_font_color, font=s_font_family) ##5
             #################################################################################################################################
             #6
             if len(BaseDeMots[Numéro][6])>=45: ##6
