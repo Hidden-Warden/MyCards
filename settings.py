@@ -21,6 +21,10 @@ s_font_color="black" #general color
 s_button_color_unactive="#525E70" #Couleur du BOUTON quand non cliqué #Default: #00CEFF CYAN
 s_button_color_active="#FFFFFF" #Couleur du BOUTON quand cliqué #Default: #E300FF VIOLET
 s_button_texte_color="#FFFFFF" #Couleur du texte BOUTON
+
+s_button_texte_color_scr="#FFFFFF" #Couleur du texte BOUTON screenshot if found / Next if found / And back if found
+s_button_color_unactive_scr="#6D4AFF" #Couleur du BOUTON quand non cliqué.
+
 s_button_font_size=12 #Taille texte police BOUTON
 s_button_font_family='Open Sans' #Type de police BOUTON
 s_button_height=2 #Hauteur du bouton
