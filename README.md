@@ -35,7 +35,7 @@ You can modify it as your wish.
 
 ## How to update MyCards?
 Download the new released on GitHub, extract the.zip file and transfert/copy the following files to the new folder (`settings.py` & `DataBase.csv`).
-   - If one of these files comes to change, I will notify it in the changelog so you can manually put your settings back on the new version.
+* If one of these files comes to change, I will notify it in the changelog so you can manually put your settings back on the new version.
 
 
 ### Font used in the screenshot is from Google Fonts
