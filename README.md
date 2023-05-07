@@ -1,6 +1,19 @@
-# MyCards
-## What is MyCards?
-* MyCards is an app made to store your own vocabulary words.
+<p align="center">
+  <h3 align="center">MyCards</h3>
+
+  <p align="center">
+    MyCards is an app made to store your own vocabulary words.
+  </p>
+  <p align="center">
+
+   <div class="badges" align="center">
+        <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/MyCards">
+        <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/MyCards">
+    </div>
+</p>
+
+## Built With
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 ## What does it features?
 |Light Mode|Dark Mode|
@@ -69,3 +82,11 @@ And please don't hesitate to correct me!
 Select the file location & edit the categories names.
 
 I can't sadly made the same for Android sorry. 
+
+## License
+
+Distributed under the Mozilla Public License 2.0 License. See [LICENSE](https://github.com/Hidden-Warden/Marmit65/blob/main/LICENSE) for more information.
+
+## Authors
+
+* **[Hidden-Warden](https://github.com/Hidden-Warden)** - *French student in high school*
