@@ -59,10 +59,10 @@ https://fonts.google.com/specimen/Open+Sans
 * Go in the folder called "Screenshots" I you don't see it, just launch the program once.
 How to name your file. It's simple. **Let's take an example:**
 For my first card (word) I want to put an image with a flower on it. So because it is my first card, I will call it
-* `#0-1.png` 
+* `#1-1.png` 
 * `#` <=  For the program to understand that this is a screenshot that you want to use
-* `0` <= First card | Yes the first card is 0 / the second 1 etc...
-* `-1 `<= The first screenshot for that word, but your not limited to one image. Ex: `#0-5.png` 
+* `1` <= First card
+* `-1 `<= The first screenshot for that word, but your not limited to one image. Ex: `#1-5.png` 
 
 I will also soon release a new version with some test image for you to see.
 
