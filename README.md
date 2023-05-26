@@ -87,6 +87,11 @@ I can't sadly made the same for Android sorry.
 
 Distributed under the Mozilla Public License 2.0 License. See [LICENSE](https://github.com/Hidden-Warden/Marmit65/blob/main/LICENSE) for more information.
 
+## Image of presentation
+From Pixabay:
+* https://pixabay.com/fr/illustrations/oui-cartes-spirale-beaucoup-68480/
+* https://pixabay.com/fr/photos/japon-hiver-quatre-saisons-neige-3460431/
+
 ## Authors
 
 * **[Hidden-Warden](https://github.com/Hidden-Warden)** - *French student in high school*
