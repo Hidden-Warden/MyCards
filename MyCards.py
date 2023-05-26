@@ -6,9 +6,26 @@ import csv  # .py & Librairie #5
 import random  # Librairie #6
 import webbrowser  # Librairie #7
 import tkinter.font as font  # Librairie #8
-from tkinter import *  # Librairie #9
-from settings import *  # .py #10
-from language_modules import *  # .py #11
+import time # Librairie #9
+from tkinter import *  # Librairie #10
+from settings import *  # .py #11
+from language_modules import *  # .py #12
+
+# Start- Discord RPC
+try:
+    from pypresence import Presence
+    cliend_id = "1111771604746244117"
+    RPC = Presence(cliend_id)
+    RPC.connect()
+    RPC.update(
+        state = "Learn vocabulary",
+        start = time.time(),
+        large_image = "logo",
+        buttons = [{"label": "GitHub", "url": "https://github.com/Hidden-Warden/MyCards"}]
+    )
+except:
+    print("module pypresence not found so the Discord RPC is not working")
+# End- Discord RPC
 
 ## ///DEF\\\##
 def language(input_language):

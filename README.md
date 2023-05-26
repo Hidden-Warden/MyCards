@@ -20,6 +20,12 @@
 |--|--|
 |![LightMode](https://user-images.githubusercontent.com/70717127/166895375-186bdaa9-780f-4a6f-92f6-8ac3e7dbd331.png)|![DarkMode](https://user-images.githubusercontent.com/70717127/166895388-a46eaa57-f200-4a52-8fed-d1217b223841.png)|
 
+## Prerequisite
+You need to install pypresence with the following commands if you want to use the Discord Rich Presence:
+```sh
+pip install pypresence
+```
+
 ## You are free to personalise it!
 In the `settings.py` file, you can:
 * Change the language. (s_language=)
