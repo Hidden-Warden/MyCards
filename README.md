@@ -64,7 +64,9 @@ For my first card (word) I want to put an image with a flower on it. So because 
 * `1` <= First card
 * `-1 `<= The first screenshot for that word, but your not limited to one image. Ex: `#1-5.png` 
 
-I will also soon release a new version with some test image for you to see.
+I will also soon release a new version with some test image for you to see. Done: v0.9.1
+
+As of right now, only the `.png` format is supported On v0.9.1 and past version.
 
 There also new keyboard shortcut, made for using the screenshot option.
 
@@ -91,6 +93,7 @@ Distributed under the Mozilla Public License 2.0 License. See [LICENSE](https://
 From Pixabay:
 * https://pixabay.com/fr/illustrations/oui-cartes-spirale-beaucoup-68480/
 * https://pixabay.com/fr/photos/japon-hiver-quatre-saisons-neige-3460431/
+* https://pixabay.com/fr/photos/oui-se-mettre-d-accord-autoriser-3407433/
 
 ## Authors
 
