@@ -7,6 +7,13 @@
   <p align="center">
 
    <div class="badges" align="center">
+        <img alt="Rlease (latest by date)" src="https://img.shields.io/github/v/release/Hidden-Warden/MyCards">
+        <img alt="Release Date" src="https://img.shields.io/github/release-date/Hidden-Warden/MyCards">
+        <img alt="Repo size" src="https://img.shields.io/github/repo-size/Hidden-Warden/MyCards">
+        <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/MyCards">
+        <img alt="Pull requests" src="https://img.shields.io/github/issues-pr/Hidden-Warden/MyCards">
+        <img alt="Code size in bytes" src="https://img.shields.io/github/languages/code-size/Hidden-Warden/MyCards">
+        <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/Hidden-Warden/MyCards">
         <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/MyCards">
         <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/MyCards">
     </div>
