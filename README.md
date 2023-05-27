@@ -1,8 +1,6 @@
 <p align="center">
-  <h3 align="center">MyCards</h3>
-
   <p align="center">
-    MyCards is an app made to store your own vocabulary words.
+    <img alt=Banner src="https://github.com/Hidden-Warden/MyCards/assets/69793084/ec7f76c6-c4ff-48d1-be68-d3bc7e1d6ed0">
   </p>
   <p align="center">
 
