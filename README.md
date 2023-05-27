@@ -5,15 +5,15 @@
   <p align="center">
 
    <div class="badges" align="center">
-        <img alt="Release (latest by date)" src="https://img.shields.io/github/v/release/Hidden-Warden/MyCards?style=for-the-badge">
-        <img alt="Release Date" src="https://img.shields.io/github/release-date/Hidden-Warden/MyCards?style=for-the-badge">
-        <img alt="Repo size" src="https://img.shields.io/github/repo-size/Hidden-Warden/MyCards?style=for-the-badge">
-        <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/MyCards?style=for-the-badge">
-        <img alt="Pull requests" src="https://img.shields.io/github/issues-pr/Hidden-Warden/MyCards?style=for-the-badge">
-        <img alt="Code size in bytes" src="https://img.shields.io/github/languages/code-size/Hidden-Warden/MyCards?style=for-the-badge">
-        <img alt="Commit activity" src="https://img.shields.io/github/commit-activity/m/Hidden-Warden/MyCards?style=for-the-badge">
-        <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/MyCards?style=for-the-badge">
-        <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/MyCards?style=for-the-badge">
+        <img alt="Release (latest by date)" src="https://img.shields.io/github/v/release/Hidden-Warden/MyCards?style=flat-square">
+        <img alt="Release Date" src="https://img.shields.io/github/release-date/Hidden-Warden/MyCards?style=flat-square">
+        <img alt="Repo size" src="https://img.shields.io/github/repo-size/Hidden-Warden/MyCards?style=flat-square">
+        <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/MyCards?style=flat-square">
+        <img alt="Pull requests" src="https://img.shields.io/github/issues-pr/Hidden-Warden/MyCards?style=flat-square">
+        <img alt="Code size in bytes" src="https://img.shields.io/github/languages/code-size/Hidden-Warden/MyCards?style=flat-square">
+        <img alt="Commit activity" src="https://img.shields.io/github/commit-activity/m/Hidden-Warden/MyCards?style=flat-square">
+        <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/MyCards?style=flat-square">
+        <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/MyCards?style=flat-square">
     </div>
 </p>
 
