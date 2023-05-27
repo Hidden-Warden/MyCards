@@ -19,7 +19,7 @@ try:
     RPC.connect()
     RPC.update(
         state = "Learn vocabulary",
-        start = time.time(),
+        start = int(time.time()),
         large_image = "logo",
         buttons = [{"label": "GitHub", "url": "https://github.com/Hidden-Warden/MyCards"}]
     )
