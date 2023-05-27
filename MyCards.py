@@ -24,7 +24,7 @@ try:
         buttons = [{"label": "GitHub", "url": "https://github.com/Hidden-Warden/MyCards"}]
     )
 except:
-    print("module pypresence not found so the Discord RPC is not working")
+    print("Module pypresence not found so the Discord RPC is not working")
 # End- Discord RPC
 
 ## ///DEF\\\##
