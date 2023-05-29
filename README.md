@@ -14,7 +14,7 @@
         <img alt="Commit activity" src="https://img.shields.io/github/commit-activity/m/Hidden-Warden/MyCards?style=flat-square">
         <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/MyCards?style=flat-square">
         <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/MyCards?style=flat-square">
-        <img alt="PyPresence" src="https://img.shields.io/badge/using-pypresence-00bb88.svg?style=flat-square&logo=discord&logoWidth=20"
+        <img alt="PyPresence" src="https://img.shields.io/badge/using-pypresence-00bb88.svg?style=flat-square&logo=discord&logoWidth=20">
     </div>
 </p>
 
