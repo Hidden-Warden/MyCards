@@ -109,4 +109,4 @@ From Pixabay:
 
 ## Authors
 
-* [**@Hidden-Warden**](https://github.com/Hidden-Warden) - Future french student in BTS SIO
+* [**@Hidden-Warden**](https://github.com/Hidden-Warden) - French student in BTS SIO
