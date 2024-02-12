@@ -5,16 +5,16 @@
   <p align="center">
 
    <div class="badges" align="center">
-        <img alt="Release (latest by date)" src="https://img.shields.io/github/v/release/Hidden-Warden/MyCards?style=flat-square">
-        <img alt="Release Date" src="https://img.shields.io/github/release-date/Hidden-Warden/MyCards?style=flat-square">
-        <img alt="Repo size" src="https://img.shields.io/github/repo-size/Hidden-Warden/MyCards?style=flat-square">
-        <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/MyCards?style=flat-square">
-        <img alt="Pull requests" src="https://img.shields.io/github/issues-pr/Hidden-Warden/MyCards?style=flat-square">
-        <img alt="Code size in bytes" src="https://img.shields.io/github/languages/code-size/Hidden-Warden/MyCards?style=flat-square">
-        <img alt="Commit activity" src="https://img.shields.io/github/commit-activity/m/Hidden-Warden/MyCards?style=flat-square">
-        <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/MyCards?style=flat-square">
-        <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/MyCards?style=flat-square">
-        <img alt="PyPresence" src="https://img.shields.io/badge/using-pypresence-00bb88.svg?style=flat-square&logo=discord&logoWidth=20">
+        <img alt="Release (latest by date)" src="https://img.shields.io/github/v/release/Hidden-Warden/MyCards">
+        <img alt="Release Date" src="https://img.shields.io/github/release-date/Hidden-Warden/MyCards">
+        <img alt="Repo size" src="https://img.shields.io/github/repo-size/Hidden-Warden/MyCards">
+        <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/MyCards">
+        <img alt="Pull requests" src="https://img.shields.io/github/issues-pr/Hidden-Warden/MyCards">
+        <img alt="Code size in bytes" src="https://img.shields.io/github/languages/code-size/Hidden-Warden/MyCards">
+        <img alt="Commit activity" src="https://img.shields.io/github/commit-activity/m/Hidden-Warden/MyCards">
+        <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/MyCards">
+        <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/MyCards">
+        <img alt="PyPresence" src="https://img.shields.io/badge/using-pypresence-00bb88.svg?logo=discord&logoWidth=20">
     </div>
 </p>
 
